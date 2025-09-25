@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Room Payment Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #e8f1f5; /* Light background color */
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Center Payment Section */
+        .center-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            animation: slideUp 1s ease-out;
+            flex-direction: column; /* Stack card and text vertically */
+            text-align: center;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 16px; /* Increased radius for softer corners */
+            background: url('pg-room.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            animation: fadeInCard 1.2s ease-out;
+        }
+
+        /* Lighter overlay for better readability */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3); /* Lighter overlay */
+            z-index: 0;
+        }
+
+        /* Ensure all card content is above the overlay */
+        .card * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card img.payment-img {
+            height: 120px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            animation: fadeInImage 1s ease-out;
+        }
+
+        .card img.payment-img:hover {
+            transform: scale(1.08);
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: slideUpBtn 1.5s ease-out;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #20bd5c, #0e6e61);
+        }
+
+        .whatsapp-btn img {
+            height: 22px;
+            width: 22px;
+        }
+
+        /* Fade-in effect for body */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slide-up effect for center section */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fade-in effect for the card */
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fade-in effect for payment image */
+        @keyframes fadeInImage {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Slide-up effect for button */
+        @keyframes slideUpBtn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 100%;
+                padding: 25px;
+            }
+
+            .card p {
+                font-size: 14px; /* Slightly smaller font for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Center Payment Section -->
+    <div class="center-section">
+        <div class="card">
+            <img src="payment.jpg" class="payment-img" alt="Payment QR">
+            <a href="https://wa.me/9940164128" target="_blank" class="whatsapp-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                Send Screenshot
+            </a>
+        </div>
+
+        <!-- Moved the paragraph outside of the card -->
+        <p>After completing payment, please send a screenshot through WhatsApp to confirm your PG room booking.(send it along with your Email and phone number)
+            after your payment wait for your confirmation call.our management give room_id and further details
+        </p>
+    </div>
+
+</body>
+</html>
